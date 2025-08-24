@@ -1,0 +1,312 @@
+/* Global */
+body {
+  font-family: "Segoe UI", sans-serif;
+  /* background: #f4f9f4; */
+  background-image: url('images/background.jpeg'); 
+  background-size: cover;      
+  background-position: center;  
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #2e3d2f;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  max-width: 1100px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;  
+  grid-gap: 20px;
+}
+
+/* Grouped columns */
+.left, .right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Eco score box (with chart + habits inside) */
+.eco-score-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Headings inside cards aligned left */
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  color: #2e3d2f;
+  text-align: left;   
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Keep Eco Score itself centered inside the box */
+.eco-score {
+  text-align: center;
+}
+
+/* Left column (Eco Score + Habits) */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Right column (Activity Board + Plant Tree) */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Card style */
+.card {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Headings */
+h1 {
+  grid-column: span 2;  
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Habits buttons */
+.habits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.habits button {
+  background: #2e8b57;
+  color: rgb(197, 252, 190);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-weight: bold;
+}
+
+.habits button:hover {
+  background: #256d46;
+}
+
+/* Points Table */
+.points-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0 10px 0;
+  background: rgb(225, 247, 212);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.points-table th {
+  background: #2e8b57;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+.points-table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Plant tree section */
+select {
+  padding: 8px;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 16px;
+  border-radius: 8px;
+}
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+button:not(:disabled) {
+  background: #2e8b57;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+button:not(:disabled):hover {
+  background: #256d46;
+}
+.plant-tree {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start; 
+  margin-top: 10px;
+  gap: 10px; 
+}
+
+.plant-tree select,
+.plant-tree button {
+  font-size: 1.3rem; 
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.plant-tree button {
+  background-color: #0a02ff;
+  color: white;
+  cursor: pointer;
+  width: 100%; 
+  transition: background 0.3s;
+}
+
+.plant-tree button:hover {
+  background-color: #0261fa;
+}
+
+/* Eco Score */
+.eco-score {
+  text-align: center;
+}
+.eco-score h2 {
+  margin: 0 0 10px 0;
+}
+.eco-score .score {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2e8b57;
+}
+.eco-score p {
+  margin: 5px 0 0 0;
+  font-style: italic;
+}
+/* Activity Board */
+.activity-board ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.activity-board li {
+  background: #f9f9f9;
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.activity-board li:nth-child(odd) {
+  background: #e6f2e6;
+}
+.activity-board li strong {
+  color: #2e8b57;
+}
+.activity-board li small {
+  color: #555;
+  font-size: 0.85rem;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .app {
+    grid-template-columns: 1fr;  
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .habits button {
+    flex: 1 1 100%;  
+  }
+}
+.activity-board ul::-webkit-scrollbar {
+  width: 8px;
+}
+.activity-board ul::-webkit-scrollbar-thumb {
+  background: #2e8b57;
+  border-radius: 4px;
+}
+.activity-board ul::-webkit-scrollbar-thumb:hover {
+  background: #256d46;
+}
+.activity-board ul::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+.activity-board ul::-webkit-scrollbar-track:hover {
+  background: #e1e1e1;
+}
+/* Special Habits Button */
+.special-habit {
+  background: #daa520;  /* golden */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.special-habit:hover {
+  background: #b8860b;
+}
+
+/* Special Activities Table */
+.special-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: #fff8dc; /* light golden background */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+.special-table th {
+  background: #daa520;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+.special-table td {
+  padding: 10px;
+  border-bottom: 1px solid #f0e68c;
+  font-weight: bold;
+  color: #444;
+}
+.green-quotes {
+  background-color: rgb(224, 247, 233, 0.5);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.green-quotes ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.green-quotes li {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
